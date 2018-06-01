@@ -14,9 +14,36 @@ namespace webRenap.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(FormCollection form)
+        {
+            if (form != null)
+            {
+                return RedirectToAction("solicitud");
+            } else
+            {
+                ViewBag.err = "El usuario o contraseña son incorrectos";
+                return View();
+            }
+        }
+
         public ActionResult Solicitud()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Solicitud(FormCollection form)
+        {
+            if (form != null)
+            {
+                return RedirectToAction("Certificado");
+            }
+            else
+            {
+                ViewBag.err = "El CUI ingresado no esta registrado";
+                return View();
+            }
         }
 
         public ActionResult Certificado()
