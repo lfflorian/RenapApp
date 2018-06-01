@@ -11,9 +11,12 @@ namespace wsRenap
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Certificado.svc o Certificado.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class Certificado : ICertificado
     {
-        void ICertificado.Certificado(string CUI)
+        ConexionDB db = new ConexionDB();
+        Persona ICertificado.Certificado(string CUI)
         {
-            throw new NotImplementedException();
+            string query = $"SELECT * FROM Persona Where CUI = '{CUI}'";
+            var respuesta = db.Solicitud(query);
+            return respuesta;
         }
     }
 }

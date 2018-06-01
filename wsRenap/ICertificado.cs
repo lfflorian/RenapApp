@@ -12,10 +12,10 @@ namespace wsRenap
     public interface ICertificado
     {
         [OperationContract]
-        void Certificado(string CUI);
+        Persona Certificado(string CUI);
     }
     [DataContract]
-    class Persona
+    public class Persona
     {
         [DataMember]
         public string CUI { get; set; }

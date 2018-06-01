@@ -14,11 +14,11 @@ namespace wsRenap
 
         public ConexionDB()
         {
-            ConnectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
+            ConnectionString = ConfigurationManager.ConnectionStrings["DbContext"].ConnectionString;
             cnn = new SqlConnection(ConnectionString);
         }
 
-        public SqlDataReader Solicitud(string query)
+        public Persona Solicitud(string query)
         {
             try
             {
@@ -26,16 +26,29 @@ namespace wsRenap
                 SqlCommand command = new SqlCommand(query, cnn);
                 SqlDataReader dataReader;
                 dataReader = command.ExecuteReader();
-                dataReader.Close();
+                dataReader.Read();
+                Persona persona = new Persona
+                {
+                    CUI = dataReader["CUI"].ToString(),
+                    PrimerNombre = dataReader["PrimerNombre"].ToString(),
+                    SegundoNombre = dataReader["SegundoNombre"].ToString(),
+                    PrimerApellido = dataReader["PrimerApellido"].ToString(),
+                    SegundoApellido = dataReader["SegundoApellido"].ToString(),
+                    FechaNacimiento = Convert.ToDateTime(dataReader["FechaNacimiento"].ToString()),
+                    LugarNacimiento = dataReader["LugarNacimiento"].ToString(),
+                    Genero = dataReader["Genero"].ToString(),
+                    Obervaciones = dataReader["Observaciones"].ToString(),
+                    Password = dataReader["PassWord"].ToString()
+                };
+
                 command.Dispose();
                 cnn.Close();
-                return dataReader;
+                return persona;
             }
             catch (Exception)
             {
-                throw;
+                return new Persona();
             }
-            
         }
     }
 }
