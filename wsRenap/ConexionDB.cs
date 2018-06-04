@@ -88,8 +88,8 @@ namespace wsRenap
             }
             catch (Exception es)
             {
-                throw es;
-               // return new Persona();
+                //throw es;
+                return new Persona();
             }
         }
     }

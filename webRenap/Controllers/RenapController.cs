@@ -38,9 +38,12 @@ namespace webRenap.Controllers
         [HttpPost]
         public ActionResult Solicitud(FormCollection form)
         {
-            if (form != null)
+            var valor = Convert.ToString(form["cui"]);
+            var vertificado = certificado.Certificado(valor);
+
+            if (vertificado.CUI != null)
             {
-                return RedirectToAction("Certificado");
+                return RedirectToAction("Certificado", vertificado);
             }
             else
             {
@@ -49,9 +52,9 @@ namespace webRenap.Controllers
             }
         }
 
-        public ActionResult Certificado()
+        public ActionResult Certificado(wsRenapCertificado.Persona p)
         {
-            return View();
+            return View(p);
         }
     }
 }

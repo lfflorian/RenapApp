@@ -57,5 +57,22 @@
     <script src="../assets/theme/js/script.js"></script>
     <script src="../assets/formoid/formoid.min.js"></script>
 
+    <script>
+
+        var formi = $('formi');
+        formi.submit(
+            function () {
+                $.ajax({
+                    type: formi.attr('method'),
+                    url: formi.attr('action'),
+                    data: formi.serialize(),
+                    success: function (resutl) {
+
+                    }
+                });
+            }
+        );
+    </script>
+
 </body>
 </html>

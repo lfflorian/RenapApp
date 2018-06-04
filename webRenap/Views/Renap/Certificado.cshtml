@@ -1,4 +1,6 @@
 ﻿
+@model webRenap.wsRenapCertificado.Persona
+
 @{
     ViewBag.Title = "Certificado";
 }
@@ -15,9 +17,6 @@
 </section>
 
 <section class="accordion1 cid-qTGXIoVekW" id="accordion1-7">
-
-
-
 
     <div class="container">
         <div class="media-container-row">
@@ -40,26 +39,7 @@
                                 <p class="mbr-fonts-style panel-text display-7">
                                     <strong>
                                         Nombre Completo:
-                                    </strong><br><br>Luis fernando&nbsp;<br><br><strong>Apellidos Completos:</strong><br><br>Florian Rosales<br><br><strong>Fecha Nacimiento:</strong><br><br>04/11/1993<br><br><strong>Genero:</strong><br><br>Masculino<br><br><strong>Lugar de nacimiento:<br></strong><br>Ciudad de Guatemala, Guatemala
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab" id="headingTwo">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-core="" href="#collapse2_7" aria-expanded="false" aria-controls="collapse2">
-                                <h4 class="mbr-fonts-style display-5">
-                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Datos de los padres
-                                </h4>
-                            </a>
-
-                        </div>
-                        <div id="collapse2_7" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#bootstrap-accordion_7">
-                            <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">
-                                    <strong>
-                                        Nombre Completo Madre:
-                                    </strong><br><br>Silvia Emliza Solares Rosales<br><br><strong>Lugar de nacimiento:</strong><br><br>Ciudad de Guatemala, Guatemala<br><br><strong>Nombre Completo Padre:</strong><br><br>Mario Agustuo Florian Aguilar<br><br><strong>Lugar de nacimiento:</strong><br><br>Ciudad de Guatemala, Guatemala
+                                    </strong><br><br>@Html.DisplayFor(model => model.PrimerNombre) @Html.DisplayFor(model => model.SegundoNombre)&nbsp;<br><br><strong>Apellidos Completos:</strong><br><br>@Html.DisplayFor(model => model.PrimerApellido) @Html.DisplayFor(model => model.SegundoApellido)<br><br><strong>CUI:</strong><br><br>@Html.DisplayFor(model => model.CUI)<br><br><strong>Fecha Nacimiento:</strong><br><br>@Html.DisplayFor(model => model.FechaNacimiento)<br><br><strong>Genero:</strong><br><br>@Html.DisplayFor(model => model.Genero)<br><br><strong>Lugar de nacimiento:<br></strong><br>@Html.DisplayFor(model => model.LugarNacimiento)
                                 </p>
                             </div>
                         </div>
@@ -74,13 +54,10 @@
                         </div>
                         <div id="collapse3_7" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_7">
                             <div class="panel-body p-4">
-                                <p class="mbr-fonts-style panel-text display-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p class="mbr-fonts-style panel-text display-7">@Html.DisplayFor(model => model.Obervaciones)</p>
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>

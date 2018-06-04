@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Solicitud";
+    ViewBag.Title = "Formulario";
 }
 
 <section class="engine"><a href="https://mobirise.me/u">bootstrap html templates</a></section>
@@ -18,22 +18,22 @@
         </div>
 
         <div class="row py-2 justify-content-center">
-            <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                <div data-form-alert="" hidden="">Thanks for filling out the form!</div>
 
-                @using (Html.BeginForm("Solicitud", "Renap", FormMethod.Post))
-                 {
-                     <div class="input-group">
-                     <input class="form-control" name="cui" placeholder="CUI" required="" id="email-form3-">
-                     <span class="input-group-btn"><button type="submit" class="btn  btn-success-outline display-4">ENVIAR</button></span>
-                    </div>
-                 }
+            <form id="formiI" class="mbr-form" action="Renap/Solicitud" method="post">
+                <div class="input-group">
+                    <input class="form-control" name="cui" placeholder="CUI" required="">
+                    <span class="input-group-btn"><button type="submit" class="btn  btn-success-outline ">ENVIAR</button></span>
+                </div>
+            </form>
+            
+        </div>
 
-                @*<form class="mbr-form" action="~/Controllers/Renap/Solicitud" method="post" data-form-title="Mobirise Form">
-            <input type="hidden" name="email" value="5YG5TRFS/OOq3tlCDyPyvRCPNLEknGyLmR/fqW+hOygXssPDng/5Sg4A36kz8Kq4wqs8PckkmbOZRozLrkiSklTLbbyD7hCgDi/3flNeUtEOZnSVawP3/eEr81EY6ZNA" data-form-field="Email">
-                    Solicitud
-        </form>*@
-            </div>
+        <div class="row align-center">
+            @{ if (ViewBag.err != null)
+                {
+            <p>@ViewBag.err</p>
+                }
+            }   
         </div>
     </div>
 </section>

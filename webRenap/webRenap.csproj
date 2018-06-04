@@ -179,8 +179,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Renap\Login.cshtml" />
-    <Content Include="Views\Renap\Solicitud.cshtml" />
     <Content Include="Views\Renap\Certificado.cshtml" />
+    <Content Include="Views\Renap\Solicitud.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
