@@ -18,15 +18,56 @@ namespace wsRenap
             cnn = new SqlConnection(ConnectionString);
         }
 
-        public Persona Solicitud(string query)
+        public Persona Solicitud(string CUI)
         {
             try
             {
                 cnn.Open();
-                SqlCommand command = new SqlCommand(query, cnn);
+                string query = string.Empty;
+                SqlCommand command;
                 SqlDataReader dataReader;
-                dataReader = command.ExecuteReader();
+
+                try
+                {
+                    query = $"SELECT * FROM Persona Where CUI = '{CUI}'";
+                    command = new SqlCommand(query, cnn);
+                    dataReader = command.ExecuteReader();
+                    
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        query = $"SELECT * FROM Persona_2 Where CUI = '{CUI}'";
+                        command = new SqlCommand(query, cnn);
+                        dataReader = command.ExecuteReader();
+                    }
+                    catch (Exception)
+                    {
+                        try
+                        {
+                            query = $"SELECT * FROM Persona_3 Where CUI = '{CUI}'";
+                            command = new SqlCommand(query, cnn);
+                            dataReader = command.ExecuteReader();
+                        }
+                        catch (Exception)
+                        {
+                            try
+                            {
+                                query = $"SELECT * FROM Persona_4 Where CUI = '{CUI}'";
+                                command = new SqlCommand(query, cnn);
+                                dataReader = command.ExecuteReader();
+                            }
+                            catch (Exception)
+                            {
+                                return new Persona();
+                            }
+                        }
+                    }
+                }
+                
                 dataReader.Read();
+
                 Persona persona = new Persona
                 {
                     CUI = dataReader["CUI"].ToString(),
@@ -38,16 +79,17 @@ namespace wsRenap
                     LugarNacimiento = dataReader["LugarNacimiento"].ToString(),
                     Genero = dataReader["Genero"].ToString(),
                     Obervaciones = dataReader["Observaciones"].ToString(),
-                    Password = dataReader["PassWord"].ToString()
+                    Password = dataReader["Password"].ToString()
                 };
 
                 command.Dispose();
                 cnn.Close();
                 return persona;
             }
-            catch (Exception)
+            catch (Exception es)
             {
-                return new Persona();
+                throw es;
+               // return new Persona();
             }
         }
     }

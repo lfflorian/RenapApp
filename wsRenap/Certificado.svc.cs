@@ -14,8 +14,8 @@ namespace wsRenap
         ConexionDB db = new ConexionDB();
         Persona ICertificado.Certificado(string CUI)
         {
-            string query = $"SELECT * FROM Persona Where CUI = '{CUI}'";
-            var respuesta = db.Solicitud(query);
+            //string query = $"SELECT * FROM Persona2 Where CUI = '{CUI}'";
+            var respuesta = db.Solicitud(CUI);
             return respuesta;
         }
     }

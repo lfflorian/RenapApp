@@ -5,3 +5,10 @@ C:\Users\lflorian\Documents\InterUni\RenapApp\wsRenap\obj\Debug\wsRenap.csprojRe
 C:\Users\lflorian\Documents\InterUni\RenapApp\wsRenap\obj\Debug\wsRenap.csproj.CoreCompileInputs.cache
 C:\Users\lflorian\Documents\InterUni\RenapApp\wsRenap\obj\Debug\wsRenap.dll
 C:\Users\lflorian\Documents\InterUni\RenapApp\wsRenap\obj\Debug\wsRenap.pdb
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\bin\wsRenap.dll.config
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\bin\wsRenap.dll
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\bin\wsRenap.pdb
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Debug\wsRenap.csprojResolveAssemblyReference.cache
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Debug\wsRenap.csproj.CoreCompileInputs.cache
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Debug\wsRenap.dll
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Debug\wsRenap.pdb

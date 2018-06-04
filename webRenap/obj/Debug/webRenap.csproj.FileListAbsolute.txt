@@ -96,3 +96,4 @@ C:\Users\lflorian\Documents\InterUni\RenapApp\webRenap\obj\Debug\webRenap.csproj
 C:\Users\lflorian\Documents\InterUni\RenapApp\webRenap\obj\Debug\webRenap.csproj.CopyComplete
 C:\Users\lflorian\Documents\InterUni\RenapApp\webRenap\obj\Debug\webRenap.dll
 C:\Users\lflorian\Documents\InterUni\RenapApp\webRenap\obj\Debug\webRenap.pdb
+C:\Users\lfflo\source\repos\RENAP_WebApp\webRenap\obj\Debug\webRenap.csprojResolveAssemblyReference.cache

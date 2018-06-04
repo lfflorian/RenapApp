@@ -8,6 +8,7 @@ namespace webRenap.Controllers
 {
     public class RenapController : Controller
     {
+        wsRenapCertificado.CertificadoClient certificado = new wsRenapCertificado.CertificadoClient();
         // GET: Renap
         public ActionResult Login()
         {
@@ -17,6 +18,8 @@ namespace webRenap.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection form)
         {
+            var resultado = certificado.Certificado("");
+
             if (form != null)
             {
                 return RedirectToAction("solicitud");
