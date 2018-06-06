@@ -65,6 +65,7 @@
           <xs:element minOccurs="0" name="CUI" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="FechaNacimiento" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Log" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="LugarNacimiento" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Obervaciones" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />

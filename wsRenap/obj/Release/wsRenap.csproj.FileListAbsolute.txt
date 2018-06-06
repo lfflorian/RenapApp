@@ -4,3 +4,4 @@ C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\bin\wsRenap.pdb
 C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Release\wsRenap.csproj.CoreCompileInputs.cache
 C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Release\wsRenap.dll
 C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Release\wsRenap.pdb
+C:\Users\lfflo\source\repos\RENAP_WebApp\wsRenap\obj\Release\wsRenap.csprojResolveAssemblyReference.cache

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<section class="engine"><a href="https://mobirise.me/u">bootstrap html templates</a></section>
+<section class="mbr-section form3 cid-qTGVbz8DTM" id="form3-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="align-center pb-2 mbr-fonts-style display-2">
+                    Ingresa El CUI
+                </h2>
+                <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">
+                    Para obtener los datos personales
+                </h3>
+            </div>
+        </div>
+
+        <div class="row py-2 justify-content-center">
+
+            <form id="formiI" class="mbr-form" action="Renap/Solicitud" method="post">
+                <div class="input-group">
+                    <input class="form-control" name="cui" placeholder="CUI" required="">
+                    <span class="input-group-btn"><button type="submit" class="btn  btn-success-outline ">ENVIAR</button></span>
+                </div>
+            </form>
+            
+        </div>
+
+        <div class="row align-center">
+            @{ if (ViewBag.err != null)
+                {
+            <p>@ViewBag.err</p>
+                }
+            }   
+        </div>
+    </div>
+</section>

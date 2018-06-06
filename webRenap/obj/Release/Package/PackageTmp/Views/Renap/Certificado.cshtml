@@ -1,0 +1,65 @@
+﻿
+@model webRenap.wsRenapCertificado.Persona
+
+@{
+    ViewBag.Title = "Certificado";
+}
+
+<section class="engine"><a href="https://mobirise.me/b">create a website for free</a></section>
+<section class="mbr-section article content9 cid-qTGX6uTcSv" id="content9-6">
+    <div class="container">
+        <div class="inner-container" style="width: 72%;">
+            <hr class="line" style="width: 66%;">
+            <div class="section-text align-center mbr-fonts-style display-5">CERTIFICADO DE NACIMIENTO</div>
+            <hr class="line" style="width: 66%;">
+        </div>
+    </div>
+</section>
+
+<section class="accordion1 cid-qTGXIoVekW" id="accordion1-7">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-12 col-md-8">
+                <div class="section-head text-center space30">
+
+                </div>
+                <div class="clearfix"></div>
+                <div id="bootstrap-accordion_7" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <a role="button" class="panel-title collapsed text-black" data-toggle="collapse" data-core="" href="#collapse1_7" aria-expanded="false" aria-controls="collapse1">
+                                <h4 class="mbr-fonts-style display-5">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>&nbsp;Datos Personales&nbsp;
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="collapse1_7" class="panel-collapse noScroll collapse " role="tabpanel" aria-labelledby="headingOne" data-parent="#bootstrap-accordion_7">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">
+                                    <strong>
+                                        Nombre Completo:
+                                    </strong><br><br>@Html.DisplayFor(model => model.PrimerNombre) @Html.DisplayFor(model => model.SegundoNombre)&nbsp;<br><br><strong>Apellidos Completos:</strong><br><br>@Html.DisplayFor(model => model.PrimerApellido) @Html.DisplayFor(model => model.SegundoApellido)<br><br><strong>CUI:</strong><br><br>@Html.DisplayFor(model => model.CUI)<br><br><strong>Fecha Nacimiento:</strong><br><br>@Html.DisplayFor(model => model.FechaNacimiento)<br><br><strong>Genero:</strong><br><br>@Html.DisplayFor(model => model.Genero)<br><br><strong>Lugar de nacimiento:<br></strong><br>@Html.DisplayFor(model => model.LugarNacimiento)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree">
+                            <a role="button" class="collapsed text-black panel-title" data-toggle="collapse" data-core="" href="#collapse3_7" aria-expanded="false" aria-controls="collapse3">
+                                <h4 class="mbr-fonts-style display-5">
+                                    <span class="sign mbr-iconfont mbri-arrow-down inactive"></span> Observaciones
+                                </h4>
+                            </a>
+                        </div>
+                        <div id="collapse3_7" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#bootstrap-accordion_7">
+                            <div class="panel-body p-4">
+                                <p class="mbr-fonts-style panel-text display-7">@Html.DisplayFor(model => model.Obervaciones)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -38,8 +38,20 @@ namespace webRenap.Controllers
         [HttpPost]
         public ActionResult Solicitud(FormCollection form)
         {
-            var valor = Convert.ToString(form["cui"]);
-            var vertificado = certificado.Certificado(valor);
+            var valor = string.Empty;
+            var vertificado = new wsRenapCertificado.Persona(); 
+
+            try
+            {
+                valor = Convert.ToString(form["cui"]);
+                vertificado = certificado.Certificado(valor);
+            }
+            catch (Exception)
+            {
+                ViewBag.err = "El CUI ingresado no esta registrado";
+                return View();
+            }
+            
 
             if (vertificado.CUI != null)
             {

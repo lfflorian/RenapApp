@@ -32,6 +32,9 @@ namespace webRenap.wsRenapCertificado {
         private string GeneroField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LogField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LugarNacimientoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -97,6 +100,19 @@ namespace webRenap.wsRenapCertificado {
                 if ((object.ReferenceEquals(this.GeneroField, value) != true)) {
                     this.GeneroField = value;
                     this.RaisePropertyChanged("Genero");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Log {
+            get {
+                return this.LogField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LogField, value) != true)) {
+                    this.LogField = value;
+                    this.RaisePropertyChanged("Log");
                 }
             }
         }

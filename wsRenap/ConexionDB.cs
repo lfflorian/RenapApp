@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace wsRenap
@@ -20,6 +21,7 @@ namespace wsRenap
 
         public Persona Solicitud(string CUI)
         {
+            StringBuilder Texto = new StringBuilder();
             try
             {
                 cnn.Open();
@@ -32,38 +34,47 @@ namespace wsRenap
                     query = $"SELECT * FROM Persona Where CUI = '{CUI}'";
                     command = new SqlCommand(query, cnn);
                     dataReader = command.ExecuteReader();
-                    
+                    Texto.AppendLine("Tabla1");
+                dataReader.Close();
+            }
+            catch (Exception)
+            {
+                return new Persona();
+            }
+            try
+                {
+                    query = $"SELECT * FROM Persona_2 Where CUI = '{CUI}'";
+                    command = new SqlCommand(query, cnn);
+                    dataReader = command.ExecuteReader();
+                    Texto.AppendLine("Tabla2");
+                    dataReader.Close();
+                }
+                catch (Exception es)
+                {
+                    return new Persona();
+                }
+                try
+                {
+                    query = $"SELECT * FROM Persona_3 Where CUI = '{CUI}'";
+                    command = new SqlCommand(query, cnn);
+                    dataReader = command.ExecuteReader();
+                    Texto.AppendLine("Tabla3");
+                    dataReader.Close();
                 }
                 catch (Exception)
                 {
-                    try
-                    {
-                        query = $"SELECT * FROM Persona_2 Where CUI = '{CUI}'";
-                        command = new SqlCommand(query, cnn);
-                        dataReader = command.ExecuteReader();
-                    }
-                    catch (Exception)
-                    {
-                        try
-                        {
-                            query = $"SELECT * FROM Persona_3 Where CUI = '{CUI}'";
-                            command = new SqlCommand(query, cnn);
-                            dataReader = command.ExecuteReader();
-                        }
-                        catch (Exception)
-                        {
-                            try
-                            {
-                                query = $"SELECT * FROM Persona_4 Where CUI = '{CUI}'";
-                                command = new SqlCommand(query, cnn);
-                                dataReader = command.ExecuteReader();
-                            }
-                            catch (Exception)
-                            {
-                                return new Persona();
-                            }
-                        }
-                    }
+                    return new Persona();
+                }
+                try
+                {
+                    query = $"SELECT * FROM Persona_4 Where CUI = '{CUI}'";
+                    command = new SqlCommand(query, cnn);
+                    dataReader = command.ExecuteReader();
+                    Texto.AppendLine("Tabla4");
+                }
+                catch (Exception)
+                {
+                    return new Persona();
                 }
                 
                 dataReader.Read();
@@ -79,7 +90,8 @@ namespace wsRenap
                     LugarNacimiento = dataReader["LugarNacimiento"].ToString(),
                     Genero = dataReader["Genero"].ToString(),
                     Obervaciones = dataReader["Observaciones"].ToString(),
-                    Password = dataReader["Password"].ToString()
+                    Password = dataReader["Password"].ToString(),
+                    Log = Texto.ToString()
                 };
 
                 command.Dispose();

@@ -37,5 +37,7 @@ namespace wsRenap
         public string Obervaciones { get; set; }
         [DataMember]
         public string Password { get; set; }
+        [DataMember]
+        public string Log { get; set; }
     }
 }
