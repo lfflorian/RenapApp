@@ -41,42 +41,6 @@ namespace wsRenap
             {
                 return new Persona();
             }
-            try
-                {
-                    query = $"SELECT * FROM Persona_2 Where CUI = '{CUI}'";
-                    command = new SqlCommand(query, cnn);
-                    dataReader = command.ExecuteReader();
-                    Texto.AppendLine("Tabla2");
-                    dataReader.Close();
-                }
-                catch (Exception es)
-                {
-                    return new Persona();
-                }
-                try
-                {
-                    query = $"SELECT * FROM Persona_3 Where CUI = '{CUI}'";
-                    command = new SqlCommand(query, cnn);
-                    dataReader = command.ExecuteReader();
-                    Texto.AppendLine("Tabla3");
-                    dataReader.Close();
-                }
-                catch (Exception)
-                {
-                    return new Persona();
-                }
-                try
-                {
-                    query = $"SELECT * FROM Persona_4 Where CUI = '{CUI}'";
-                    command = new SqlCommand(query, cnn);
-                    dataReader = command.ExecuteReader();
-                    Texto.AppendLine("Tabla4");
-                }
-                catch (Exception)
-                {
-                    return new Persona();
-                }
-                
                 dataReader.Read();
 
                 Persona persona = new Persona
